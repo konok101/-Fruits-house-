@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import { useNavigate, Link } from 'react-router-dom';
 import loginImg from '../../../images/login.png'
 import './login.css'
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const Login = () => {
@@ -63,7 +64,7 @@ const Login = () => {
 
     return (
         <div className='row container'>
-            <div className='w-50 mx-auto col-lg-7 col-12 '>
+            <div className='w-50 mx-auto col-lg-7 shadow p-3 mb-5 bg-body rounded '>
                 <h2 className='text-center text-primary mt-5 mb-3'>Please Login</h2>
 
                 <Form onSubmit={handleSubmit}>
@@ -82,12 +83,16 @@ const Login = () => {
                         Sign Up</Link> </h5>
                     <h5 className='  mt-3 forgot-btn'> <button onClick={resetPassword}>Forgotten password?</button> </h5>
                 </div>
-
+                <SocialLogin></SocialLogin>
 
             </div>
 
             <div className='col-lg-4 col-12'>
                 <img src={loginImg} alt="" />
+            </div>
+
+            <div className="col-lg-7">
+            
             </div>
 
         </div>

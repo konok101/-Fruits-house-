@@ -2,6 +2,9 @@
     margin-top: 20px;
    
 }
+.for-login-shadow{
+    box-shadow: 122px 142px 24px 13px gray;
+}
 .login-btn{
     color: bisque;
     padding: 10px;
