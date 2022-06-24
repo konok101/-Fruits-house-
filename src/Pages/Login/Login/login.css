@@ -1,0 +1,17 @@
+.login-part{
+    margin-top: 20px;
+   
+}
+.login-btn{
+    color: bisque;
+    padding: 10px;
+    border-radius: 10%;
+    border: none;
+}
+.forgot-btn button{
+    background-color: orange;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+
+}
