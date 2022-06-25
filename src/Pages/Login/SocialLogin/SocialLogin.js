@@ -30,15 +30,15 @@ const SocialLogin = () => {
                 <h3 className='mt-3 ms-5'>Other Sign In method</h3>
             </div>
             {errorElement}
-            <div  className='mt-3 ms-5 d-flex justify-content-center'>
+            <div  className='mt-3  ms-5 d-flex justify-content-center'>
                 <div >
-                    <button onClick={() => signInWithGoogle()} className='btn btn-primary  d-flex justify-content-between mx-auto my-2 me-3 socialmethod  '>
+                    <button onClick={() => signInWithGoogle()} className='btn btn-primary col-12  d-flex justify-content-between mx-auto my-2 me-3 socialmethod  '>
                         <img width="50px" src={google} alt="" />
                         <span className='px-2'>Google Sign In</span>
                     </button>
                 </div>
                 <div >
-                    <button onClick={() => signInWithGithub()} className='btn btn-primary  d-flex justify-content-between mx-auto my-2 socialmethod  '>
+                    <button onClick={() => signInWithGithub()} className='btn btn-primary col-12  d-flex justify-content-between mx-auto my-2 socialmethod  '>
                         <img width="55px" className='mt-2' src={github} alt="" />
                         <span className='px-2 '> Github sign In</span></button>
                 </div>

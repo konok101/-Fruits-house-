@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login/Login/Login';
 import Fruits from './Pages/Home/Fruits/Fruits';
 import SignUp from './Pages/Login/SignUp/SignUp';
+import FruitsInfo from './Pages/Details/FruitsInfo/FruitsInfo';
+ 
 
 function App() {
   return (
@@ -16,6 +18,10 @@ function App() {
         <Route path='/' element={<Fruits></Fruits>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/fruit' element={<FruitsInfo></FruitsInfo>}></Route>
+        
+        <Route path='/fruitsInfo/:fruitsId' element={<FruitsInfo></FruitsInfo>}></Route>
+ 
       </Routes>
     </div>
   );

@@ -1,9 +1,22 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Fruit.css'
 
-const Fruit = () => {
+const Fruit = ({ fruit }) => {
+    const { _id, name, img, price, description } = fruit;
+    const navigate = useNavigate();
+
+    const navigateToInfo = _id => {
+        navigate(`/fruitsInfo/${_id}`)
+
+    }
     return (
-        <div>
-            
+        <div className='fruit'>
+            <img className='w-100' src={img} alt=""></img>
+            <h1>{name}</h1>
+            <p>Price: {price}</p>
+            <p><small>{description}</small></p>
+            <button onClick={() => navigateToInfo(_id)}>Buy Now: {name}</button>
         </div>
     );
 };
