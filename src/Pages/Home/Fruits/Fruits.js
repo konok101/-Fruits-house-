@@ -8,7 +8,7 @@ const Fruits = () => {
     const [fruitsDetails, setFruitsDetails] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/fruitsInfo')
+        fetch(' https://mighty-mountain-44501.herokuapp.com/fruitsinfo')
             .then(res => res.json())
             .then(data => setFruitsDetails(data));
 
@@ -18,7 +18,7 @@ const Fruits = () => {
             <h1 className='fruit-title mt-5'>Our Total Services: {fruitsDetails.length}</h1>
             <div className='fruit-container'>
                 {
-                    fruitsDetails.map(fruit => <Fruit
+                    fruitsDetails.slice(0,6).map(fruit => <Fruit
                         key={fruit._id}
                         fruit={fruit}
                     ></Fruit>)
