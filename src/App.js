@@ -8,6 +8,8 @@ import Fruits from './Pages/Home/Fruits/Fruits';
 import SignUp from './Pages/Login/SignUp/SignUp';
 import FruitsInfo from './Pages/Details/FruitsInfo/FruitsInfo';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import Fruit from './Pages/Home/Fruit/Fruit';
+import AllFruits from './Pages/Home/AllFruits/AllFruits';
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/fruit' element={<FruitsInfo></FruitsInfo>}></Route>
+        <Route path='c' element={<AllFruits></AllFruits>}></Route>
 
 
         <Route path='/fruitsInfo/:fruitsId' element={<RequireAuth><FruitsInfo></FruitsInfo> </RequireAuth>}></Route>
