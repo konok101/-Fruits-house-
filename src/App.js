@@ -14,11 +14,12 @@ import AddNewItem from './Pages/Inventory/AddNewItem/AddNewItem';
 import Error from './Pages/Shared/Error/Error';
 import Home from './Pages/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
+import Blogs from './Pages/About/Blogs/Blogs';
 
 
 function App() {
   return (
-    <div className="App">
+    <div  >
       <Header></Header>
 
       <Routes>
@@ -28,11 +29,12 @@ function App() {
         <Route path='/fruit' element={<FruitsInfo></FruitsInfo>}></Route>
         <Route path='/manage' element={<AllFruits></AllFruits>}></Route>
         <Route path='/add' element={<AddNewItem></AddNewItem>}></Route>
-
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
 
         <Route path='/fruitsInfo/:fruitsId' element={<RequireAuth><FruitsInfo></FruitsInfo> </RequireAuth>}></Route>
         <Route path='*' element={<Error></Error>}></Route>
-      
+
+
       </Routes>
       <Footer></Footer>
     </div>
