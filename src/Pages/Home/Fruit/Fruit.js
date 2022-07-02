@@ -11,7 +11,7 @@ const Fruit = ({ fruit }) => {
 
     }
     return (
-        <div className='fruit'>
+        <div className='fruits'>
             <img className='w-100' src={img} alt=""></img>
             <h1>{name}</h1>
             <p>Price: {price}</p>

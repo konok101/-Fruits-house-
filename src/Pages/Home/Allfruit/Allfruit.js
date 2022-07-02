@@ -1,5 +1,6 @@
 import React from 'react';
 import './Allfruit.css'
+
 const Allfruit = ({ fruit }) => {
     const { _id, name, img, price, quantity, description } = fruit;
 

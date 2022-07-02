@@ -10,6 +10,7 @@ import FruitsInfo from './Pages/Details/FruitsInfo/FruitsInfo';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import Fruit from './Pages/Home/Fruit/Fruit';
 import AllFruits from './Pages/Home/AllFruits/AllFruits';
+import AddNewItem from './Pages/Inventory/AddNewItem/AddNewItem';
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/fruit' element={<FruitsInfo></FruitsInfo>}></Route>
-        <Route path='c' element={<AllFruits></AllFruits>}></Route>
+        <Route path='/c' element={<AllFruits></AllFruits>}></Route>
+        <Route path='/add' element={<AddNewItem></AddNewItem>}></Route>
 
 
         <Route path='/fruitsInfo/:fruitsId' element={<RequireAuth><FruitsInfo></FruitsInfo> </RequireAuth>}></Route>

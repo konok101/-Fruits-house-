@@ -5,6 +5,8 @@ import './FruitsInfo.css'
 const FruitsInfo = () => {
    const { fruitsId } = useParams();
    const [fruitsInfo, setFruitsInfo] = useState({});
+   const [quentity, setQuentity] = useState(0);
+   const [add, setAdd]= useState(0);
 
    useEffect(() => {
       const url = `https://mighty-mountain-44501.herokuapp.com/fruitsinfo/${fruitsId}`;
@@ -13,7 +15,18 @@ const FruitsInfo = () => {
          .then(data => setFruitsInfo(data))
    });
 
+   const delivery = (event) => {
+      
+    //  const quentity = fruitsInfo.quantity;
+      setQuentity(()=>quentity-1);
+   }
 
+   const addQuntity =(event )=>{
+      
+      setQuentity(()=> parseFloat(quentity) + parseFloat(add));
+    
+
+   }
 
 
    return (
@@ -26,18 +39,19 @@ const FruitsInfo = () => {
             <h4>{fruitsInfo.name}</h4>
             {fruitsId}
             <p>Price: {fruitsInfo.price}</p>
-            <p>Quntity {fruitsInfo.quantity}</p>
-            <button className='mb-1' onClick="delivery()">Delivered</button> <br />
-            <input type="text" placeholder='Add Auntity' />
-            <button>Add</button> <br />
+            <p>Quntity {quentity}</p>
+            <button className='mb-1' onClick={() => delivery()}>Delivered</button> <br />
+            <input onBlur={(event)=>setAdd(event.target.value)} type="number"  placeholder='Add Auntity' />
+            <button onClick={()=>addQuntity()}>Add</button> <br />
 
          </div>
 
          <div className="col-lg-2 mt-5">
 
 
-        
+
             <Link to='/c'>  <button className='btn-for-all-review' >All Fruits item </button></Link>
+            <Link to='/add'>  <button className='btn-for-all-review' > Add item </button></Link>
 
          </div>
 
