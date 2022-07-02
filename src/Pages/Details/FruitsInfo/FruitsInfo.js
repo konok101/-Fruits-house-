@@ -50,7 +50,7 @@ const FruitsInfo = () => {
 
 
 
-            <Link to='/c'>  <button className='btn-for-all-review' >All Fruits item </button></Link>
+            <Link to='/manage'>  <button className='btn-for-all-review' >All Fruits item </button></Link>
             <Link to='/add'>  <button className='btn-for-all-review' > Add item </button></Link>
 
          </div>

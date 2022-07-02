@@ -1,10 +1,12 @@
 import React from 'react';
+import Banner from '../Shared/Banner/Banner';
 import Fruits from './Fruits/Fruits';
 
 const Home = () => {
     return (
         <div>
-           <h1>Homee</h1> 
+          
+           <Banner></Banner>
            <Fruits></Fruits>
         </div>
     );
