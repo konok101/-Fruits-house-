@@ -1,27 +1,40 @@
 
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
+import auth from '../../../firebase.init';
 
 
 const AddNewItem = () => {
     const { register, handleSubmit } = useForm();
+    const [user] = useAuthState(auth);
+    
 
-    const onSubmit = data =>{
-        console.log(data);
-        const url=`http://localhost:5000/fruitsInfo`;
-        fetch(url,{
-            method:'POST',
+    /* console.log(user.email); */
+    const onSubmit = data => {
+        const info = {
+            'email': user.email,
+            'name': data.name,
+            'description': data.description,
+            'img': data.img,
+            'price': data.price,
+            'quantity': data.quantity,
+        }
+        console.log(info);
+        const url = `https://mighty-mountain-44501.herokuapp.com/fruitsInfo`;
+        fetch(url, {
+            method: 'POST',
             headers: {
-                'content-type':'application/json'
+                'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(info)
         })
-        .then(res=>res.json())
-        .then(result =>{
-            console.log(result);
-        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
     }
-       
+
     return (
         <div className='w-50 mx-auto'>
             <h3 className='bg-primary p-3 mt-5'>Add item!!</h3>
