@@ -14,6 +14,7 @@ const AddNewItem = () => {
     const onSubmit = data => {
         const info = {
             'email': user.email,
+            'nameSup':data.nameSup,
             'name': data.name,
             'description': data.description,
             'img': data.img,
@@ -21,6 +22,7 @@ const AddNewItem = () => {
             'quantity': data.quantity,
         }
         console.log(info);
+        //const url = `https://mighty-mountain-44501.herokuapp.com/fruitsInfo`;
         const url = `https://mighty-mountain-44501.herokuapp.com/fruitsInfo`;
         fetch(url, {
             method: 'POST',
@@ -39,7 +41,8 @@ const AddNewItem = () => {
         <div className='w-50 mx-auto'>
             <h3 className='bg-primary p-3 mt-5'>Add item!!</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className='w-100' placeholder='Enter the name' {...register("name")} />
+                <input className='w-100' placeholder='Enter the item name' {...register("name")} />
+                <input className='w-100' placeholder='Enter the suplier Name' {...register("nameSup")} />
                 <input className='w-100' placeholder='Enter the description' {...register("description")} />
                 <input className='w-100' placeholder='Enter the img url' {...register("img")} />
                 <input className='w-100' placeholder='Enter the price' type="number" {...register("price")} />

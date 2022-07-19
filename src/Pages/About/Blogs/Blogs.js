@@ -8,7 +8,7 @@ const Blogs = () => {
             <b>Ans:</b>
             <table>
                 <thead>
-                    <th >JAvascript</th>
+                    <th >Javascript</th>
                     <th>Node js</th>
                 </thead>
                 <tbody>
@@ -32,7 +32,7 @@ const Blogs = () => {
                 <table>
                     <thead>
                         <th >SQL</th>
-                        <th>No SQL</th>
+                        <th>Nosql</th>
                     </thead>
                     <tbody>
                         <tr className='p-3'>

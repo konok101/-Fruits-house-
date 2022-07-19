@@ -16,6 +16,8 @@ import Home from './Pages/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import Blogs from './Pages/About/Blogs/Blogs';
 import Myitems from './Pages/Inventory/Myitems/Myitems';
+import HealthyFruits from './Pages/Home/HealthyFruits/HealthyFruits';
+import SeasionalFruits from './Pages/Home/SeasionalFruits/SeasionalFruits';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
         <Route path='/add' element={<AddNewItem></AddNewItem>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/myitem' element={<Myitems></Myitems>}></Route>
+        <Route path='/healty' element={<HealthyFruits></HealthyFruits>}></Route>
+        <Route path='/Seasional' element={<SeasionalFruits></SeasionalFruits>}></Route>
         
 
         <Route path='/fruitsInfo/:fruitsId' element={<RequireAuth><FruitsInfo></FruitsInfo> </RequireAuth>}></Route>

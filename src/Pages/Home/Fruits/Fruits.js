@@ -17,7 +17,7 @@ const Fruits = () => {
     }, []);
     return (
         <div className='container '>
-            <h1 className='fruit-title mt-5'>Our Total Services: {fruitsDetails.length}</h1>
+            <h1 className='fruit-title mt-5'>Our Total Fruits Item: {fruitsDetails.length}</h1>
             <div className='fruit-container'>
                 {
                     fruitsDetails.slice(0, 6).map(fruit => <Fruit

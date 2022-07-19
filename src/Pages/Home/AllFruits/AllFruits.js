@@ -1,10 +1,13 @@
 import React from 'react';
 import FruitsApi from '../../Details/FruitsApi/FruitsApi';
 import './Allfruits.css'
+import deleteicon from '../../../images/delete.png'
+
 const AllFruits = () => {
     const [services, setServices] = FruitsApi();
+
     const handleDelete = (id) => {
-        const  proced = window.confirm('Are you sure delete?');
+        const proced = window.confirm('Are you sure delete this fruit?');
         if (proced) {
             const url = `http://localhost:5000/fruitsInfo/${id}`
             fetch(url, {
@@ -22,33 +25,51 @@ const AllFruits = () => {
 
     }
     return (
-        <div className='w-50 mx-auto'>
-            <table >
+        <div className='  row'>
+            <div className="col lg-3">
 
 
-                {
+            </div>
+            <div className="col-lg-6">
+                <h1 className='shadow shadow-lg text-center p-2'>All Fruits</h1>
+                <table className='w-50 mx-auto'>
+ 
 
-                    services.map(fruit => <div key={fruit._id}>
-                        <div className='d-flex justify-content-between  '>
-                            <div>
-                                <tr>
-                                    <td className='p-1'>{fruit.name}</td>
-                                    <td className='p-2'>{<img width="50px" src={fruit.img} />}</td>
-                                    <td className='p-4'>{fruit.quantity}</td>
-                                    <td className='p-3'>{fruit.price}</td>
-                                </tr>
+                    {
 
+                        services.map(fruit => <div key={fruit._id}>
+                            <div className='d-flex justify-content-center shadow shadow-lg  '>
+                                <div>
+                                    <tr>
+
+                                        <td className='p-1'>{fruit.name}</td>
+                                        <td className='p-2'>{<img width="50px" src={fruit.img} />}</td>
+                                        <td className='p-4'>{fruit.quantity}</td>
+                                        <td className='p-3'>{fruit.price}</td>
+
+
+                                    </tr>
+
+
+                                </div>
+
+                                <div className='  m-1'>
+                                    <button onClick={() => handleDelete(fruit._id)}> <img width="50px" src={deleteicon} /> </button>
+                                </div>
 
                             </div>
-                            <div className='bg-danger m-1'>
-                                <button onClick={() => handleDelete(fruit._id)}>  <h1>Delete item</h1></button>
-                            </div>
-                        </div>
 
-                    </div>)
+                        </div>)
 
-                }
-            </table>
+                    }
+                </table>
+
+            </div>
+
+            <div className="col-lg-3">
+
+            </div>
+
         </div>
     );
 

@@ -17,8 +17,10 @@ const FruitsInfo = () => {
 
    const delivery = (event) => {
       
-    //  const quentity = fruitsInfo.quantity;
-      setQuentity(()=>quentity-1);
+    const quentityofApi = fruitsInfo.quantity;
+    setQuentity(()=>quentityofApi-1);
+
+     // setQuentity(()=>quentity-1);
    }
 
    const addQuntity =(event )=>{
@@ -34,11 +36,12 @@ const FruitsInfo = () => {
 
          <div className="col-lg-3">
          </div>
-         <div className="col-lg-4">
+         <div className="col-lg-4 shadow shadow-lg">
             <img width="400px" height="300px" src={fruitsInfo.img} alt=""></img>
             <h4>{fruitsInfo.name}</h4>
             {fruitsId}
             <p>Price: {fruitsInfo.price}</p>
+            <p> Suplier: {fruitsInfo.nameSup}</p>
             <p>Quntity {quentity}</p>
             <button className='mb-1' onClick={() => delivery()}>Delivered</button> <br />
             <input onBlur={(event)=>setAdd(event.target.value)} type="number"  placeholder='Add Auntity' />
@@ -50,8 +53,8 @@ const FruitsInfo = () => {
 
 
 
-            <Link to='/manage'>  <button className='btn-for-all-review' >All Fruits item </button></Link>
-            <Link to='/add'>  <button className='btn-for-all-review' > Add item </button></Link>
+{/*             <Link to='/manage'>  <button className='btn-for-all-review' >All Fruits item </button></Link>
+            <Link to='/add'>  <button className='btn-for-all-review' > Add item </button></Link> */}
 
          </div>
 

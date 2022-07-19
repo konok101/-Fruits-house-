@@ -4,11 +4,11 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div id='footer' className="footer bg-primary mt-5 p-4">
+        <div id='footer' className="footer bg-dark mt-5 p-4">
         <Fade>
-        <p className='mt-2'>© {new Date().getFullYear()}
+        <p className='mt-2 '>© {new Date().getFullYear()}
           All rights reserved. Created by 
-            <a href="https://www.linkedin.com/in/konok-majamder/ " target="_blank">Konok Majamder</a>.
+            <a className='text-primary' href="https://www.linkedin.com/in/konok-majamder/ " target="_blank">Konok Majamder</a>.
         </p>
         </Fade>
     </div>
