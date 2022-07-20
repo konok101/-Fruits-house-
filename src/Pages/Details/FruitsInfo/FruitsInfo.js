@@ -29,7 +29,7 @@ const FruitsInfo = () => {
       setQuantity(parseInt(quantity) + parseInt(add));
    }
 
-   
+
 
 
    return (

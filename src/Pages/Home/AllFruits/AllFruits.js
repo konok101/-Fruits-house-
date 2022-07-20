@@ -9,7 +9,7 @@ const AllFruits = () => {
     const handleDelete = (id) => {
         const proced = window.confirm('Are you sure delete this fruit?');
         if (proced) {
-            const url = `http://localhost:5000/fruitsInfo/${id}`
+            const url = `https://mighty-mountain-44501.herokuapp.com/fruitsInfo/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

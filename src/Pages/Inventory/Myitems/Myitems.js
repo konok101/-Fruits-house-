@@ -14,7 +14,7 @@ const Myitems = () => {
         const getOrders = async () => {
             const email = user.email;
             console.log(email);
-            const url = `http://localhost:5000/myFruitsInfo?email=${email}`;
+            const url = `https://mighty-mountain-44501.herokuapp.com/myFruitsInfo?email=${email}`;
             const { data } = await axios.get(url);
             setOrders(data);
         }
@@ -25,7 +25,7 @@ const Myitems = () => {
         const proced = window.confirm('Are you sure delete this item?');
         if (proced) {
             
-            const url = `http://localhost:5000/fruitsInfo/${id}`
+            const url = `https://mighty-mountain-44501.herokuapp.com/fruitsInfo/${id}`
             fetch(url, {
                 method: 'DELETE'
             })

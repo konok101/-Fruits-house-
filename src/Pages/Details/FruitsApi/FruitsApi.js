@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 const FruitsApi = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/fruitsInfo')
+        fetch('https://mighty-mountain-44501.herokuapp.com/fruitsInfo')
             .then(res => res.json())
             .then(data => setServices(data))
     },[]);
