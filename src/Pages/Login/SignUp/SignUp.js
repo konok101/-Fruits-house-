@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import './SignUp.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { sendEmailVerification } from 'firebase/auth';
 
 const SignUp = () => {
     const naviGate = useNavigate();
@@ -19,12 +20,23 @@ const SignUp = () => {
         naviGate('/login')
     }
 
+    const verifyEmail =()=>{
+        sendEmailVerification(auth.currentUser)
+        .then(()=>{
+            alert('sent email for verification');
+        })
+    }
+
     const handleSignUp = async event => {
         event.preventDefault();
         const password = event.target.password.value;
         const email = event.target.email.value;
 
-        createUserWithEmailAndPassword(email, password);
+        createUserWithEmailAndPassword(email, password)
+        .then(rsult=>{
+            verifyEmail();
+        })
+        
         naviGate('/home')
 
     }
