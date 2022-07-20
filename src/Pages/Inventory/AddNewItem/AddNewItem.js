@@ -47,7 +47,7 @@ const AddNewItem = () => {
                 <input className='w-100' placeholder='Enter the img url' {...register("img")} />
                 <input className='w-100' placeholder='Enter the price' type="number" {...register("price")} />
                 <input className='w-100' placeholder='Enter the quntity' type="number" {...register("quantity")} /> <br />
-                <input className='w-100' type="submit" value="Add item" />
+                <input className='w-100 btn btn-primary' type="submit" value="Add item" />
             </form>
         </div>
     );

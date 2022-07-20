@@ -4,7 +4,7 @@ import mango from '../../../images/mango.png'
 import water from '../../../images/melon.png'
 import pepaya from '../../../images/papaya.png'
 
-import orange from '../../../images/orang.png'
+import orange from '../../../images/orangsss.png'
 import  guava from '../../../images/guava.png'
 import Grapes from '../../../images/Grapes.png'
 import Strawberries  from '../../../images/Strawberries.png'

@@ -22,7 +22,7 @@ const Myitems = () => {
     }, [user])
 
     const handleDelete = (id) => {
-        const proced = window.confirm('Are you sure delete?');
+        const proced = window.confirm('Are you sure delete this item?');
         if (proced) {
             
             const url = `http://localhost:5000/fruitsInfo/${id}`
@@ -32,8 +32,10 @@ const Myitems = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
+                    window.location.reload();
                     const remainig = services.filter(fruit => fruit._id !== id);
-                     setOrders(remainig)
+                     setOrders(remainig);
+                    
 
                 })
 
@@ -47,7 +49,7 @@ const Myitems = () => {
 
     return (
         <div>
-            <h1>This is my items{orders.length}</h1>
+             
             {
 
                 orders.map(fruit => <div key={fruit._id}>
