@@ -58,7 +58,7 @@ const Myitems = () => {
                     <div className='d-flex justify-content-center '>
                         <div>
                             <tr>
-                                <td className='p-1'>{fruit.name}</td>
+                                <td className='p-1'>{fruit.name.slice(0,7)}</td>
                                 <td className='p-2'>{<img width="50px" src={fruit.img} />}</td>
                                 <td className='p-4'>{fruit.quantity}</td>
                                 <td className='p-3'>{fruit.price}</td>

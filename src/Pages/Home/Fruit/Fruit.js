@@ -19,7 +19,9 @@ const Fruit = ({ fruit }) => {
                 <p>Price: {price}</p>
                 <p>Suplier: {nameSup}</p>
                 <p>Quantity: {quantity}</p>
-                <p><small>{description}</small></p>
+                 <div className='p-2'>
+                 <p><small className=''>{description}</small></p>
+                 </div>
                 <button className='btn btn-primary ' onClick={() => navigateToInfo(_id)}>Buy Now: {name}</button>
             </div>
        
