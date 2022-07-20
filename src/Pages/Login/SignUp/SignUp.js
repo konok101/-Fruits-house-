@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import './SignUp.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { sendEmailVerification } from 'firebase/auth';
+import Loading from '../../Shared/Loading/Loading';
 
 const SignUp = () => {
     const naviGate = useNavigate();
@@ -39,6 +40,10 @@ const SignUp = () => {
         
         naviGate('/home')
 
+    }
+
+    if(loading){
+        return <Loading></Loading>
     }
     return (
         <div className='SignUp-form w-50 mx-auto '>

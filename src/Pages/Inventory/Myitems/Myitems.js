@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import FruitsApi from '../../Details/FruitsApi/FruitsApi';
 import deletbtn from '../../../images/delete.png'
  
+ 
 const Myitems = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
@@ -13,7 +14,7 @@ const Myitems = () => {
     useEffect(() => {
         const getOrders = async () => {
             const email = user.email;
-            console.log(email);
+            
             const url = `https://mighty-mountain-44501.herokuapp.com/myFruitsInfo?email=${email}`;
             const { data } = await axios.get(url);
             setOrders(data);
@@ -21,6 +22,7 @@ const Myitems = () => {
         getOrders();
     }, [user])
 
+ 
     const handleDelete = (id) => {
         const proced = window.confirm('Are you sure delete this item?');
         if (proced) {

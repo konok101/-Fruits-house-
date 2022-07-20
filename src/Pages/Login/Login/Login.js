@@ -6,6 +6,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import loginImg from '../../../images/login.png'
 import './login.css'
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
 
 
 const Login = () => {
@@ -21,7 +22,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-
+ 
 
     if (user) {
         navigate('/home')
@@ -32,6 +33,8 @@ const Login = () => {
             <p className='text-danger'>{error?.message}</p>
         </div>
     }
+
+ 
     const handleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
@@ -61,7 +64,10 @@ const Login = () => {
     }
 
 
-
+    if (loading) {
+        return <Loading></Loading>
+    }
+    
     return (
         <div className='row container'>
             <div className='w-50 mx-auto col-lg-7 shadow p-3 mb-5 bg-body rounded '>
@@ -92,7 +98,7 @@ const Login = () => {
             </div>
 
             <div className="col-lg-7">
-            
+
             </div>
 
         </div>

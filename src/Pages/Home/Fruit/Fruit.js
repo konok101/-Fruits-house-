@@ -11,7 +11,7 @@ const Fruit = ({ fruit }) => {
 
 
     }
-    console.log(quantity);
+ 
     return (
         <div className='fruits shadow shadow-lg'>
             <img className='w-100' width="400px" height="250px" src={img} alt=""></img>
